@@ -1,0 +1,61 @@
+<div class="ContainerCreate">
+    <div class="SubContainerCreate">
+        <h1>Crear Transaccion</h1>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="form-group row">
+                <label for="fechaVenta" class="col-sm-2 col-form-label">Fecha Venta</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="fechaVenta" formControlName="fechaVenta">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="precioVenta" class="col-sm-2 col-form-label">Precio Venta</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="precioVenta" formControlName="precioVenta">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="vehiculo" class="col-sm-2 col-form-label">Vehiculo</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="vehiculo" formControlName="vehiculo">
+                        <option *ngFor="let vehiculo of automoviles" [value]="vehiculo.vehiculoID">
+                            {{vehiculo.marca}} - {{vehiculo.modelo}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="cliente" class="col-sm-2 col-form-label">Cliente</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="cliente" formControlName="cliente">
+                        <option *ngFor="let cliente of clientes" [value]="cliente.clienteID">
+                            {{cliente.nombre}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="concesionario" class="col-sm-2 col-form-label">Concesionario</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="concesionario" formControlName="concesionario">
+                        <option *ngFor="let concesionario of concesionarios" [value]="concesionario.concesionarioID">
+                            {{concesionario.nombre}}
+                        </option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <div class="">
+                    <button type="submit" class="btn btn-primary">Crear</button>
+                </div>
+                <div class="">
+                    <a href="/TransaccionList" class="btn btn
+                    -primary">Volver</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
